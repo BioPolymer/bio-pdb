@@ -1,3 +1,5 @@
+import { PolymerElement, html } from "@polymer/polymer/polymer-element";
+
 /**
  * `bio-pdb-viewer` This component displays a PDB molecule image.
  *
@@ -6,7 +8,7 @@
  * @polymer
  * @extends {Polymer.Element}
  */
-class BioPdbViewer extends Polymer.Element {
+class BioPdbViewer extends PolymerElement {
   static get template() {
     return Polymer.html`
       <style>
