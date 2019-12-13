@@ -1,4 +1,4 @@
-import { PolymerElement, html } from "@polymer/polymer";
+import { PolymerElement, html } from "@polymer/polymer/polymer-element";
 import "@polymer/paper-listbox/paper-listbox";
 import "@polymer/paper-item";
 
@@ -99,8 +99,6 @@ class BioPdbList extends PolymerElement {
    */
   ready() {
     super.ready();
-
-    Polymer.RenderStatus.afterNextRender(this, function() {});
   }
 }
 

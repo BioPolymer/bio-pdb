@@ -72,8 +72,6 @@ class BioPdbViewer extends PolymerElement {
   ready() {
     super.ready();
     this.$.pdbImg.src = this._getUrl();
-
-    Polymer.RenderStatus.afterNextRender(this, function() {});
   }
 
   pdbIdChanged(newVal) {

@@ -1,6 +1,6 @@
 {
   "name": "@biopolymer-elements/bio-pdb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PDB-related web components",
   "main": "bio-pdb-card.js",
   "dependencies": {
