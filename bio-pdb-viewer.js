@@ -6,24 +6,24 @@ import { PolymerElement, html } from "@polymer/polymer/polymer-element";
  * @summary ShortDescription.
  * @customElement
  * @polymer
- * @extends {Polymer.Element}
+ * @extends {PolymerElement}
  */
 class BioPdbViewer extends PolymerElement {
   static get template() {
-    return Polymer.html`
+    return html`
       <style>
-          :host {
-              display: block;
-              --height: 100%;
-              --width: 100%;
-            }
-          img{
-            height: var(--height);
-            width: var(--width);
-          }
-        </style>
-    <img id="pdbImg" title="{{title}}">
-`;
+        :host {
+          display: block;
+          --height: 100%;
+          --width: 100%;
+        }
+        img {
+          height: var(--height);
+          width: var(--width);
+        }
+      </style>
+      <img id="pdbImg" title="{{title}}" />
+    `;
   }
 
   /**
