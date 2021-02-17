@@ -33,6 +33,7 @@ class BioPdbList extends PolymerElement {
         paper-item {
           background-color: transparent;
           color: white;
+          cursor: pointer;
           font-size: 0.9em;
 
           --paper-item-selected: {

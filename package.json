@@ -5,6 +5,7 @@
   "main": "bio-pdb-card.js",
   "dependencies": {
     "@polymer/polymer": "^3.3.1",
+    "aspen-protein-viewer": "github:aspen-elements/aspen-protein-viewer#v1.0.0",
     "i": "^0.3.6",
     "npm": "^6.13.4"
   },
