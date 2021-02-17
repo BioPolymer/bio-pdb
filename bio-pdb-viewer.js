@@ -1,7 +1,9 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element";
 
+import "aspen-protein-viewer/ngl-viewer";
+
 /**
- * `bio-pdb-viewer` This component displays a PDB molecule image.
+ * `bio-pdb-viewer` This component displays a PDB molecule 3D view.
  *
  * @summary ShortDescription.
  * @customElement
@@ -17,12 +19,15 @@ class BioPdbViewer extends PolymerElement {
           --height: 100%;
           --width: 100%;
         }
-        img {
+        .threeD-protein {
           height: var(--height);
           width: var(--width);
         }
       </style>
-      <img id="pdbImg" title="{{title}}" />
+
+      <div class="threeD-protein" title="[[pdbId]]">
+        <ngl-viewer data-resource="rcsb://[[pdbId]]"></ngl-viewer>
+      </div>
     `;
   }
 
@@ -42,8 +47,7 @@ class BioPdbViewer extends PolymerElement {
       pdbId: {
         type: String,
         value: "4LUC",
-        observer: "pdbIdChanged",
-        notify: true
+        notify: true,
       },
 
       /** The type of molecule. */
@@ -51,38 +55,7 @@ class BioPdbViewer extends PolymerElement {
 
       /** The size of the molecule image. */
       size: { type: String, value: "250" },
-
-      /** The title of the image. */
-      title: { type: String, value: "KRAS" }
     };
-  }
-
-  /**
-   * Instance of the element is created/upgraded. Use: initializing state,
-   * set up event listeners, create shadow dom.
-   * @constructor
-   */
-  constructor() {
-    super();
-  }
-
-  /**
-   * Use for one-time configuration of your component after local DOM is initialized.
-   */
-  ready() {
-    super.ready();
-    this.$.pdbImg.src = this._getUrl();
-  }
-
-  pdbIdChanged(newVal) {
-    this.$.pdbImg.src = this._getUrl();
-    this.title = this.pdbId;
-  }
-
-  _getUrl() {
-    let id = this.pdbId.toLowerCase();
-    let folder = id.substring(1, 3);
-    return `https://cdn.rcsb.org/images/rutgers/${folder}/${id}/${id}.pdb1-250.jpg`;
   }
 }
 
