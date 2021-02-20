@@ -36,12 +36,6 @@ class BioPdbPanel extends PolymerElement {
           border-color: var(--app-header-color);
           color: var(--app-header-color);
         }
-        bio-pdb-viewer {
-          margin: auto;
-          margin: auto;
-          --height: 250px;
-          --width: 250px;
-        }
       </style>
 
       <fieldset>

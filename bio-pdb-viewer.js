@@ -16,12 +16,15 @@ class BioPdbViewer extends PolymerElement {
       <style>
         :host {
           display: block;
-          --height: 100%;
-          --width: 100%;
+          margin: auto;
+          --height: 250px;
+          --width: 250px;
+          @apply --bio-pdb-viewer;
         }
         .threeD-protein {
           height: var(--height);
           width: var(--width);
+          @apply --ngl-viewer-wrapper;
         }
       </style>
 
